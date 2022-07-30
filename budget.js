@@ -132,12 +132,12 @@ function updateUI() {
   balance = Math.abs(calculateBalance(income, outcome));
 
   // DETERMINE SIGN OF BALANCE
-  let sign = income >= outcome ? "$" : "-$";
+  let sign = income >= outcome ? "₹" : "-₹";
 
   // UPDATE UI
-  balanceEl.innerHTML = `<small>${sign}</small>${balance}`;
-  outcomeTotalEl.innerHTML = `<small>$</small>${outcome}`;
-  incomeTotalEl.innerHTML = `<small>$</small>${income}`;
+  balanceEl.innerHTML = `<small>₹{sign}</small>₹{balance}`;
+  outcomeTotalEl.innerHTML = `<small>₹</small>₹{outcome}`;
+  incomeTotalEl.innerHTML = `<small>₹</small>₹{income}`;
 
   clearElement([expenseList, incomeList, allList]);
 
@@ -156,8 +156,8 @@ function updateUI() {
 }
 
 function showEntry(list, type, title, amount, id) {
-  const entry = ` <li id = "${id}" class="${type}">
-                        <div class="entry">${title}: $${amount}</div>
+  const entry = ` <li id = "₹{id}" class="₹{type}">
+                        <div class="entry">₹{title}: ₹₹{amount}</div>
                         <div id="edit"></div>
                         <div id="delete"></div>
                     </li>`;
